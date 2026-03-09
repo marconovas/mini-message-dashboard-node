@@ -8,12 +8,12 @@ function getNewMessageForm(req, res) {
     res.render("form");
 }
 
-function getMessageDetails(req, res) {
+async function getMessageDetails(req, res) {
     const { messageId } = req.params;
     const id = Number(messageId);
 
     try{
-        const message = getMessageById(id);
+        const message = await getMessageById(id);
 
         if(!message){
             return res.status(404).send("Message not found");

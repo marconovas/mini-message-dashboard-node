@@ -11,6 +11,7 @@
                 <%= message.text %>
                 <%= message.user %>
                 <%= message.added.toLocaleString() %>
+                <a href="/details/<%= message.id %>">More details..</a>
             </li>
         <%})%>
     </ul>
